@@ -1,0 +1,35 @@
+endif
+
+      endif
+
+if intStep = COOKING_TOAST
+int: CookLevel# = intCookLevel# - . 05
+'Color The Bread (not on crust)
+
+if intCookLevel# >= 5
+intRed = ((intCookLevel# -5)/5) *  (intRedLight1 - intRedMedium1)
+intGreen =  ((intCookLevel# -5)/5) *  (intGreenLight2 - intGreenBright1)
+intBlue = ((intCookLevel# -5)/5) *  (intGBlueLight3 - intGreenMedium1)
+if intRed <  0 then intRed  =  0
+if intGreen < 0 then intGreen =  0
+if intBlue < 0 then intBlue =  0
+if intLevel =  1
+
+endif
+        Color limb intCurrentBread,  2,  rgb(intRed+intRedMedium1,  intGreen)
+        Color limb intCurrentBread,  3,  rgb(intRed+intRedMedium1,  intBlue)
+        endif
+
+        else
+
+intRed = ((intCookLevel# -5)/5) *  (intRedLight1 - intRedMedium1)
+intGreen =  ((intCookLevel# -5)/5) *  (intGreenLight2 - intGreenBright1)
+intBlue = ((intCookLevel# -5)/5) *  (intGBlueLight3 - intGreenMedium1)
+if intRed <  0 then intRed = 0
+if intGreen <  0 then intGreen = 0
+if intBlue < 0 then intBlue = 0
+if intLevel  =  1
+         color limb intCurrentBread,  2,  rgb((intRed+intRedDark1) , intGreen+i)
+         color limb intCurrentBread,  3,  rgb((intGreen+intGreenDark1) , intGreen+i)
+endif
+if intLevel  =  2 or intLevel  =  3 or intLevel  =  4

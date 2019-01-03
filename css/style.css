@@ -1,0 +1,66 @@
+body {
+    background-color: #000000;
+}
+
+svg{
+    shape-rendering: crispEdges;
+}
+
+p{
+    color: #5B5B5B;
+    margin-left: 100px;
+    font-size: 16px
+}
+
+a{
+    margin-left: 100px;
+}
+
+a:link, a:visited {
+    color: #E8E8E8;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+a:link:active, a:visited:active {
+    color: #E8E8E8;
+}
+
+
+html { overflow-y: hidden; }
+@font-face {
+    font-family: 'monkirta_pursuit_ncregular';
+    src: url('monkirta_pursuit_nc-webfont.eot');
+    src: url('monkirta_pursuit_nc-webfont.eot?#iefix') format('embedded-opentype'),
+    url('monkirta_pursuit_nc-webfont.woff2') format('woff2'),
+    url('monkirta_pursuit_nc-webfont.woff') format('woff'),
+    url('monkirta_pursuit_nc-webfont.ttf') format('truetype'),
+    url('monkirta_pursuit_nc-webfont.svg#monkirta_pursuit_ncregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+input[type="text"] {
+     display: block;
+     margin: 0;
+     width: 100%;
+     font-family: sans-serif;
+     font-size: 40px;
+     appearance: none;
+     box-shadow: none;
+     padding: 10px;
+     border: solid 1px #dcdcdc;
+     transition: box-shadow 0.3s, border 0.3s;
+ }
+input[type="text"]:focus,
+input[type="text"]:focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+    outline: none;
+}
+form{
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script charset="utf-8">
+
+    var cardpool = "http://netrunnerdb.com/api/cards/"
+
+    var cardsreq = new XMLHttpRequest();
+    cardsreq.open('GET', cardpool, false);
+    cardsreq.send(null);
+
+
+    cardpoolJSON = JSON.parse(cardsreq.response);
+    baseImageAddress = "images/";
+    var imageAddress = []
+    for (j in cardpoolJSON)
+    {
+        imageAddress.push("".concat(baseImageAddress,cardpoolJSON[j].code,".png"))
+    }
+
+
+    var array = Array.apply(null, Array(cardpoolJSON.length)).map(function (_, i) {return i;});
+
+
+    for (i in array)
+    {
+        var request = new XMLHttpRequest();
+        request.open('GET', imageAddress[i], true);
+        request.onreadystatechange = function() {
+            // Makes sure the document is ready to parse.
+            if(request.readyState == 4) {
+                // Makes sure it's found the file.
+                if(request.status == 200) {
+                    loadCanvas(request.responseText);
+                }
+            }
+        };
+        request.send(null);
+    }
+
+</script>
+
+</body>
+</html>
